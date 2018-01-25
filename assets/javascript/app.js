@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 
-var remainingTime = 30;
+var remainingTime = 5;
 var intervalId;
 var correctAnswers = 0;
 var numQuestions = 10;
@@ -84,5 +84,7 @@ var mainContainer = $(".mainContainer")
 
 		mainContainer.hide();
 		$("#results").html("<h2>You got " + correctAnswers + " out of " + numQuestions);
+
+		// setTimeout(startGame, 1000);
 	};					
  
