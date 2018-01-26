@@ -1,19 +1,26 @@
 $(document).ready(function() {
 	startGame();
+	// reset();
 });
 
 
-var remainingTime = 5;
+var remainingTime;
 var intervalId;
 var correctAnswers = 0;
 var numQuestions = 10;
 var mainContainer = $(".mainContainer")
+var score;
+var clockingRunning = false;
 
 			
 	function startGame() {
+		// remainingTime = 5;
+		$("#start").show();
 		mainContainer.hide();
-
+		console.log("somehijkdhkl");
 		$("#start").on("click", function() {
+			remainingTime = 5;
+
 			startTimer();
 			$(this).hide();
 			mainContainer.show();
@@ -22,23 +29,32 @@ var mainContainer = $(".mainContainer")
 	};
 
 	function startTimer() {
-		intervalId = setInterval(decrement, 1000);
+		if (!clockingRunning) {
+			intervalId = setInterval(decrement, 1000);
+			clockingRunning = true;
+		}
 	};
 
 	function decrement() {
+		$("#remainingTime").html("<h2>You have " + remainingTime + " seconds left!</h2>");
+		// debugger;
 		remainingTime--;
 
-		$("#remainingTime").html("<h2>You have " + remainingTime + " seconds left!</h2>");
+		
+		console.log(remainingTime);
 
 		if (remainingTime === 0) {
+			clockingRunning = false;
+			clearInterval(intervalId);
 			timesUp();
-			$("#timesUp").html("<h2>Time is up!!</h2>");	
+
+			// $("#timesUp").html("<h2>Time is up!!</h2>");	
 		}
 	};
 
 	function timesUp() {
-		clearInterval(intervalId);
-
+		
+		
 		var Q1 = $('input:radio[name="q1"]:checked').val();
 		var Q2 = $('input:radio[name="q2"]:checked').val();
 		var Q3 = $('input:radio[name="q3"]:checked').val();
@@ -83,8 +99,14 @@ var mainContainer = $(".mainContainer")
 
 
 		mainContainer.hide();
-		$("#results").html("<h2>You got " + correctAnswers + " out of " + numQuestions);
+		score = $("#results").html("<h2>You got " + correctAnswers + " out of " + numQuestions);
 
 		// setTimeout(startGame, 1000);
-	};					
- 
+		startGame();
+		
+
+	};	
+
+	// function reset() {
+	// 	setTimeout(startGame, 3000);
+	// };				
