@@ -2,93 +2,149 @@
 <html>
 <head>
 	<title>Trivia!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<h1>Dr. Seuss Trivia</h1>
 
-	<h3>A test! A test! Would you, could take this test? Try it! Try it! Do your best!</h3>
-
-	<div id="results"></div>
-
-	<button id="start">Start Timer</button>
+	<div class="jumbotron jumbotron-fluid img">
+	  <div class="container text-center text-white text">
+	    <h1 class="display-4">Dr. Seuss Trivia</h1>
+	    <p class="lead">A test! A test! Would you, could take this test? Try it! Try it! Do your best!</p>
+	  </div>
+	</div>
 	
-	<div class="mainContainer">
-	
-	<div id="remainingTime"></div>
+	<div class="container">
 
-		<h2>What is another name that Dr. Seuss wrote under?</h2>
-	  
-		  <input type="radio" name="q1" value="T.S Johnson">T.S Johnson<br>
-		  <input type="radio" name="q1" value="P.D. Eastman">P.D. Eastman<br>
-		  <input type="radio" name="q1" value="Theo LeSeig">Theo LeSeig<br>
-		  <input type="radio" name="q1" value="Theo Fancher">Theo Fancher
+		<div id="results"></div>
 
-		<h2>Dr. Seuss real name is?</h2>
-
-		  <input type="radio" name="q2" value="Theodor Seuss">Theodor Seuss<br>
-		  <input type="radio" name="q2" value="Seuss Geisel">Seuss Geisel<br>
-		  <input type="radio" name="q2" value="Theodor Geisel">Theodor Geisel<br>
-		  <input type="radio" name="q2" value="Fredrick Seuss">Fredrick Seuss
-
-		<h2>In the Cat In the Hat, who does not want the cat to stay and just go away?</h2>
-
-		  <input type="radio" name="q3" value="The dog">The Dog<br>
-		  <input type="radio" name="q3" value="The fish">The Fish<br>
-		  <input type="radio" name="q3" value="The cat">The Cat<br>
-		  <input type="radio" name="q3" value="The sea monkey">The sea monkey
-
-		<h2>What do Thing One and Thing Two like to play with?</h2>  
-
-		  <input type="radio" name="q4" value="Rocking Horse">Rocking Horse<br>
-		  <input type="radio" name="q4" value="Balls">Balls<br>
-		  <input type="radio" name="q4" value="Kites">Kites<br>
-		  <input type="radio" name="q4" value="Video Games">Video Games
+		<button type="button" id="start" class="btn btn-secondary btn-lg btn-block">Start Timer</button>
 		
-		<h2>Who meant what they said and said what they meant?</h2>
+		<div class="mainContainer text-center">
+			<div class="row">
+				<div class="col-md-12 p-5">
+					<div id="remainingTime"></div>
+				</div>	
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>What is another name that Dr. Seuss wrote under?</h2>
+			  
+				  <input type="radio" name="q1" value="T.S Johnson"> T.S Johnson<br>
+				  <input type="radio" name="q1" value="P.D. Eastman"> P.D. Eastman<br>
+				  <input type="radio" name="q1" value="Theo LeSeig"> Theo LeSeig<br>
+				  <input type="radio" name="q1" value="Theo Fancher"> Theo Fancher
+			 	</div> 
+			</div>  
+			
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>Dr. Seuss real name is?</h2>
 
-		  <input type="radio" name="q5" value="Horton">Horton<br>
-		  <input type="radio" name="q5" value="Yertle">Yertle<br>
-		  <input type="radio" name="q5" value="Thidwicke">Thidwicke<br>
-		  <input type="radio" name="q5" value="Sam I am">Sam I am
+				  <input type="radio" name="q2" value="Theodor Seuss"> Theodor Seuss<br>
+				  <input type="radio" name="q2" value="Seuss Geisel"> Seuss Geisel<br>
+				  <input type="radio" name="q2" value="Theodor Geisel"> Theodor Geisel<br>
+				  <input type="radio" name="q2" value="Fredrick Seuss"> Fredrick Seuss
+				</div>
+			</div>	
 
-		<h2>In Oh The Places You'll Go, one of the places mentioned was a Pizza Place.</h2>
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>In the Cat In the Hat, who does not want the cat to stay and just go away?</h2>
 
-		  <input type="radio" name="q6" value="false">true<br>
-		  <input type="radio" name="q6" value="false">false<br>
+				  <input type="radio" name="q3" value="The dog"> The Dog<br>
+				  <input type="radio" name="q3" value="The fish"> The Fish<br>
+				  <input type="radio" name="q3" value="The cat"> The Cat<br>
+				  <input type="radio" name="q3" value="The sea monkey"> The sea monkey
+				</div>
+			</div>	  
 
-		<h2>The Lorax is primarily a message of:</h2>  
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>What do Thing One and Thing Two like to play with?</h2>  
 
-		  <input type="radio" name="q7" value="Animal Rights">Animal Rights<br>
-		  <input type="radio" name="q7" value="Global Warming">Global Warming<br>
-		  <input type="radio" name="q7" value="Animal Testing">Animal Testing<br>
-		  <input type="radio" name="q7" value="Preserving the Environment">Preserving the Environment
+				  <input type="radio" name="q4" value="Rocking Horse"> Rocking Horse<br>
+				  <input type="radio" name="q4" value="Balls"> Balls<br>
+				  <input type="radio" name="q4" value="Kites"> Kites<br>
+				  <input type="radio" name="q4" value="Video Games"> Video Games
+				</div>
+			</div>	
+			
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>Who meant what they said and said what they meant?</h2>
 
-		<h2>Where does the Grinch live?</h2>
+				  <input type="radio" name="q5" value="Horton"> Horton<br>
+				  <input type="radio" name="q5" value="Yertle"> Yertle<br>
+				  <input type="radio" name="q5" value="Thidwicke"> Thidwicke<br>
+				  <input type="radio" name="q5" value="Sam I am"> Sam I am
+				</div>
+			</div>
 
-			<input type="radio" name="q8" value="North of Who-ville">North of Who-ville<br>
-		  <input type="radio" name="q8" value="In the center of town">In the center of town<br>
-		  <input type="radio" name="q8" value="South of Who-ville">South of Who-ville<br>
-		  <input type="radio" name="q8" value="Under the City">Under the City
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>In Oh The Places You'll Go, one of the places mentioned was a Pizza Place.</h2>
 
-		<h2>Who is Max?(From the Grinch)</h2>  
+				  <input type="radio" name="q6" value="false"> true<br>
+				  <input type="radio" name="q6" value="false"> false
+				</div>
+			</div>  
+			
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>The Lorax is primarily a message of:</h2>  
 
-		  <input type="radio" name="q9" value="The Grinch's Dog">The Grinch's Dog<br>
-		  <input type="radio" name="q9" value="The Mayor of Who-ville">The Mayor of Who-ville<br>
-		  <input type="radio" name="q9" value="The Grinch's Cat">The Grinch's Cat<br>
-		  <input type="radio" name="q9" value="The Police Chief">The Police Chief
+				  <input type="radio" name="q7" value="Animal Rights"> Animal Rights<br>
+				  <input type="radio" name="q7" value="Global Warming"> Global Warming<br>
+				  <input type="radio" name="q7" value="Animal Testing"> Animal Testing<br>
+				  <input type="radio" name="q7" value="Preserving the Environment"> Preserving the Environment
+				</div>
+			</div>
 
-		<h2>What book did Dr. Seuss first write?</h2>
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>Where does the Grinch live?</h2>
 
-		  <input type="radio" name="q10" value="The Cat in the Hat">The Cat in the Hat<br>
-		  <input type="radio" name="q10" value="Mulberry Street">Mulberry Street<br>
-		  <input type="radio" name="q10" value="McElligot's Pool">McElligot's Pool<br>
-		  <input type="radio" name="q10" value="Bartholomew and the Oobleck">Bartholomew and the Oobleck
+					<input type="radio" name="q8" value="North of Who-ville"> North of Who-ville<br>
+				  <input type="radio" name="q8" value="In the center of town"> In the center of town<br>
+				  <input type="radio" name="q8" value="South of Who-ville"> South of Who-ville<br>
+				  <input type="radio" name="q8" value="Under the City"> Under the City
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>Who is Max?(From the Grinch)</h2>  
+
+				  <input type="radio" name="q9" value="The Grinch's Dog"> The Grinch's Dog<br>
+				  <input type="radio" name="q9" value="The Mayor of Who-ville"> The Mayor of Who-ville<br>
+				  <input type="radio" name="q9" value="The Grinch's Cat"> The Grinch's Cat<br>
+				  <input type="radio" name="q9" value="The Police Chief"> The Police Chief
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 p-5">	
+				<h2>What book did Dr. Seuss first write?</h2>
+
+				  <input type="radio" name="q10" value="The Cat in the Hat"> The Cat in the Hat<br>
+				  <input type="radio" name="q10" value="Mulberry Street"> Mulberry Street<br>
+				  <input type="radio" name="q10" value="McElligot's Pool"> McElligot's Pool<br>
+				  <input type="radio" name="q10" value="Bartholomew and the Oobleck"> Bartholomew and the Oobleck
+				</div>
+			</div>
+	
+		</div>	  
 	</div>	  
 
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>

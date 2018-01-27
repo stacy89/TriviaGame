@@ -8,18 +8,16 @@ var remainingTime;
 var intervalId;
 var correctAnswers = 0;
 var numQuestions = 10;
-var mainContainer = $(".mainContainer")
-var score;
+var mainContainer = $(".mainContainer");
 var clockingRunning = false;
 
 			
 	function startGame() {
-		// remainingTime = 5;
 		$("#start").show();
 		mainContainer.hide();
 		console.log("somehijkdhkl");
 		$("#start").on("click", function() {
-			remainingTime = 5;
+			remainingTime = 3;
 
 			startTimer();
 			$(this).hide();
@@ -37,7 +35,7 @@ var clockingRunning = false;
 
 	function decrement() {
 		$("#remainingTime").html("<h2>You have " + remainingTime + " seconds left!</h2>");
-		// debugger;
+	
 		remainingTime--;
 
 		
@@ -48,7 +46,6 @@ var clockingRunning = false;
 			clearInterval(intervalId);
 			timesUp();
 
-			// $("#timesUp").html("<h2>Time is up!!</h2>");	
 		}
 	};
 
@@ -99,14 +96,13 @@ var clockingRunning = false;
 
 
 		mainContainer.hide();
-		score = $("#results").html("<h2>You got " + correctAnswers + " out of " + numQuestions);
-
-		// setTimeout(startGame, 1000);
-		startGame();
+		$("#results").html("<h2 class='text-center results'>You got " + correctAnswers + " out of " + numQuestions);
 		
+		// Trying to hide score after 2 seconds
+		// Hides it right away instead of waiting
+		// setTimeout($("#results").hide(), 2000);
 
+		setTimeout(startGame, 3000);
 	};	
 
-	// function reset() {
-	// 	setTimeout(startGame, 3000);
-	// };				
+				

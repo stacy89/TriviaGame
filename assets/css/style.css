@@ -1,0 +1,14 @@
+#start {
+	margin-top: 200px;
+}
+
+.img {
+	background-image: url("../images/drSeuss.jpg");
+	/*background-size: cover;*/
+}
+
+.text {
+	background-color: black;
+	padding: 10px;
+	width: 800px;
+}
