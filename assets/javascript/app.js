@@ -17,7 +17,7 @@ var clockingRunning = false;
 		mainContainer.hide();
 		console.log("somehijkdhkl");
 		$("#start").on("click", function() {
-			remainingTime = 3;
+			remainingTime = 60;
 
 			startTimer();
 			$(this).hide();
